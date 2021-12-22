@@ -11,7 +11,7 @@
 #define block -37
 #define l 32
 
-//main boards
+//main board
 int n=0;
 char player[20][20];
 //defining colors
@@ -65,7 +65,12 @@ void createArray (int x) {
         printf ("\n");
         for (int i=0; i<n; i++) {
                 printf("\t\t\t");
+            if (i>9) {
+                printf ("%d",i);
+            }
+            else {
                 printf ("%d ",i);
+            }
             for (int j=0; j<n; j++) {
                 printf (" %c ",player[i][j]);
             }
