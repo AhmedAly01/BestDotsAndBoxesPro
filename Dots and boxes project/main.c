@@ -12,9 +12,8 @@
 #define l 32
 
 //main boards
-char beginner[5][5];
-char expert[11][11];
-
+int n=1;
+char player[20][20];
 //defining colors
 //player 1 will be red
 //player 2 will be blue
@@ -36,89 +35,44 @@ void reset () {
 
 //creating the boards
 void createArray (int x) {
-    if (x==1) {
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<5; j++){
-             beginner[i][j]=0;
+        n=6*x-1;
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n; j++){
+             player[i][j]=0;
             }
         }
-        for (int i=0; i<5; i++) {
-            for (int j=0; j<5; j++) {
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<n; j++) {
                 if ((i%2==0)&&(j%2==0)) {
-                    beginner[i][j]=dot;
+                    player[i][j]=dot;
                 }
                 else {
-                    beginner[i][j]=' ';
+                    player[i][j]=' ';
                 }
             }
         }
-    }
-    else if (x==2){
-        for (int i=0; i<11; i++) {
-            for (int j=0; j<11; j++){
-             expert[i][j]=0;
-            }
-        }
-        for (int i=0; i<11; i++) {
-            for (int j=0; j<11; j++) {
-                if ((i%2==0)&&(j%2==0)) {
-                    expert[i][j]=dot;
-                }
-                else {
-                    expert[i][j]=' ';
-                }
-            }
-        }
-    }
 }
 
 //printing the boards
  void printArray (int x) {
-    if (x==1) {
         printf("\n\n");
         printf ("\t\t\t");
         printf ("  ");
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<n; i++) {
             printf (" %d ",i);
         }
         printf ("\n");
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<n; i++) {
                 printf("\t\t\t");
                 printf ("%d ",i);
-            for (int j=0; j<5; j++) {
-                printf (" %c ",beginner[i][j]);
+            for (int j=0; j<n; j++) {
+                printf (" %c ",player[i][j]);
             }
             printf ("\n");
         }
     }
-   else if (x==2){
-        printf("\n\n");
-        printf ("   ");
-        for (int i =0; i<11; i++) {
-            printf (" %d ",i);
-        }
-        printf ("\n");
-        for (int i=0; i<11; i++) {
-            if (i>9) {
-                printf ("%d ",i);
-                for (int j=0; j<11; j++) {
-                    printf(" %c ",expert[i][j]);
-                }
-                printf ("\n");
-            }
-            else {printf ("%d  ",i);
-                for (int j=0; j<11; j++) {
-                    printf(" %c ",expert[i][j]);
-                }
-                printf ("\n");
-            }
-        }
-    }
-
-}
-
 //function for checking whether the move played completed a box
-void checkBox (int n, char board[][n]) {
+void checkBox (int n, char board[n][n]) {
     for (int i=1;i<=(n-2);i+=2) {
         for (int j=1;j<=(n-2);j+=2) {
             if ((board[i-1][j]!=' ')&&(board[i+1][j]!=' ')&&(board[i][j-1]!=' ')&&(board[i][j+1]!=' ')) {
@@ -126,6 +80,7 @@ void checkBox (int n, char board[][n]) {
             }
         }
     }
+    printf("%d",n);
 }
 
 //gamemode2 algorithm (vs human)
@@ -137,7 +92,6 @@ void gamemode2(int y){
   place1:
   while(1){
         system("cls");
-       if(y==1){
             printArray(y);
              if(i%2==0){
                 printf("\n\nPlayer 1 turn\n\n");
@@ -152,14 +106,14 @@ void gamemode2(int y){
                       goto place1;
                    }
                    else{
-                      if(beginner[r][c]==' '){
+                      if(player[r][c]==' '){
                             if(r%2==0){
-                                beginner[r][c]=Hline;
+                                player[r][c]=Hline;
                             }
                             else{
-                                beginner[r][c]=Vline;
+                                player[r][c]=Vline;
                             }
-                            checkBox(5,beginner);
+                            checkBox(n,player);
                       }
                       else{
                         printf("invalid move\n");
@@ -182,14 +136,14 @@ void gamemode2(int y){
                       goto place1;
                    }
                    else{
-                      if(beginner[r][c]==' '){
+                      if(player[r][c]==' '){
                             if(r%2==0){
-                                beginner[r][c]=Hline;
+                               player[r][c]=Hline;
                             }
                             else{
-                                beginner[r][c]=Vline;
+                                player[r][c]=Vline;
                             }
-                            checkBox(5,beginner);
+                            checkBox(n,player);
                       }
                       else{
                         printf("invalid move\n");
@@ -203,78 +157,10 @@ void gamemode2(int y){
            i++;
            remMoves--;
        }
-        else {
-            printArray(y);
-                if(i%2==0){
-                printf("\n\n player 1 turn\n\n");
-                printf ("remaining moves: %d \n\n", remMoves);
-                printf("Enter number of row: ");
-                scanf(" %d",&r);
-                printf("\nEnter number of column: ");
-                scanf ("%d",&c);
-                   if((r+c)%2==0){
-                      printf("invalid move\n");
-                      system("pause");
-                      goto place1;
-                   }
-                   else{
-                      if(expert[r][c]==' '){
-                            if(r%2==0){
-                                expert[r][c]=Hline;
-                            }
-                            else{
-                                expert[r][c]=Vline;
-                            }
-                            checkBox(11,expert);
 
-                      }
-                      else{
-                        printf("invalid move\n");
-                        system("pause");
-                        goto place1;
-                      }
-
-                   }
-             }
-             else{
-                printf("\n\n player 2 turn\n\n");
-                printf ("remaining moves: %d \n\n", remMoves);
-                printf("Enter number of row: ");
-                scanf(" %d",&r);
-                printf("\nEnter number of column: ");
-                scanf ("%d",&c);
-                   if((r+c)%2==0){
-                      printf("invalid move\n");
-                      system("pause");
-                      goto place1;
-                   }
-                   else{
-                      if(expert[r][c]==' '){
-                            if(r%2==0){
-                                expert[r][c]=Hline;
-                            }
-                            else{
-                               expert[r][c]=Vline;
-                            }
-                            checkBox(11,expert);
-
-                      }
-                      else{
-                        printf("invalid move\n");
-                        system("pause");
-                        goto place1;
-                      }
-
-                   }
-
-             }
-          i++;
-          remMoves--;
-      }
-  }
 }
 
-//main 
+//main
 int main(void){
     system ("COLOR");
     int mainChoice;
@@ -336,7 +222,7 @@ int main(void){
             system("pause");
         }
     }
-        while(1){
+    while(1){
          system("cls");
          reset();
          //third menu
