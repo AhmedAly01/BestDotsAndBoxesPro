@@ -78,7 +78,7 @@ void createArray (int x) {
         }
     }
 //function for checking whether the move played completed a box
-void checkBox (int n, char board[n][n]) {
+void checkBox (int n, char board[20][20]) {
     for (int i=1;i<=(n-2);i+=2) {
         for (int j=1;j<=(n-2);j+=2) {
             if ((board[i-1][j]!=' ')&&(board[i+1][j]!=' ')&&(board[i][j-1]!=' ')&&(board[i][j+1]!=' ')) {
