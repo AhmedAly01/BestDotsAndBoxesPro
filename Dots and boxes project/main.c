@@ -10,29 +10,30 @@
 #define Vline -70
 #define block -37
 #define l 32
-
+#define RED "\033[1;31m"
+#define BLACK "\033[1;30m"
+#define YELLOW "\033[1;33m"
+#define GREEN "\033[1;32m"
+#define BLUE "\033[1;34m"
+#define PURPLE "\033[1;35m"
+#define CYAN "\033[1;36m"
+#define RESET "\033[1;0m"
 //main boards
 int n=1;
 char player[20][20];
+int scoreplayer1=0;
+int scoreplayer2=0
+int flag=0    
+    
 //defining colors
 //player 1 will be red
 //player 2 will be blue
-void blue () {
-    printf ("\033[1;34m");
+void Undo_and_Redo(){
+    
+    
+    
+    
 }
-
-void red () {
-    printf ("\033[1;31m");
-}
-
-void yellow () {
-    printf ("\033[1;33m");
-}
-
-void reset () {
-    printf ("\033[0m");
-}
-
 //creating the boards
 void createArray (int x) {
         n=6*x-1;
@@ -72,11 +73,19 @@ void createArray (int x) {
         }
     }
 //function for checking whether the move played completed a box
-void checkBox (int n, char board[n][n]) {
+void checkBox (int n, char board[20][20],int k) {
     for (int i=1;i<=(n-2);i+=2) {
         for (int j=1;j<=(n-2);j+=2) {
             if ((board[i-1][j]!=' ')&&(board[i+1][j]!=' ')&&(board[i][j-1]!=' ')&&(board[i][j+1]!=' ')) {
                 board[i][j]=block;
+                if(k%2==0){
+                    scoreplayer1++;
+                    flag=1;
+                }
+                else{
+                    scoreplayer2++;
+                    flag=1;
+                }
             }
         }
     }
@@ -92,13 +101,17 @@ void gamemode2(int y){
   place1:
   while(1){
         system("cls");
+            flag=0;
             printArray(y);
              if(i%2==0){
-                printf("\n\nPlayer 1 turn\n\n");
-                printf ("remaining moves: %d \n\n", remMoves);
-                printf("Enter number of row: ");
+                printf(RED"\n\nPlayer 1 turn\n\n"RESET);
+                printf (RED"remaining moves:"RESET);
+                printf("%d",remMoves); 
+                printf(RED"player1 score="RESET);
+                printf("%d",scoreplayer1) 
+                printf(RED"Enter number of row: "RESET);
                 scanf(" %d",&r);
-                printf("\nEnter number of column: ");
+                printf(RED"\nEnter number of column: "RESET);
                 scanf ("%d",&c);
                    if((r+c)%2==0){
                       printf("invalid move\n");
@@ -124,11 +137,12 @@ void gamemode2(int y){
                    }
              }
              else{
-                printf("\n\n player 2 turn\n\n");
-                printf ("remaining moves: %d \n\n", remMoves);
-                printf("Enter number of row: ");
+                printf(BLUE"\n\n player 2 turn\n\n"RESET);
+                printf (BLUE"remaining moves: %d \n\n", remMoves);
+                printf(BLUE"player2 score= %d",scoreplayer2); 
+                printf(BLUE"Enter number of row: ");
                 scanf(" %d",&r);
-                printf("\nEnter number of column: ");
+                printf(BLUE"\nEnter number of column: ");
                 scanf ("%d",&c);
                    if((r+c)%2==0){
                       printf("invalid move\n");
@@ -154,10 +168,14 @@ void gamemode2(int y){
                    }
 
              }
-           i++;
+           if!(flag){
+               i++;
+           }
            remMoves--;
        }
-
+    if(remMoves==0){
+        break;
+    }
 }
 
 //main
