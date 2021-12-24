@@ -41,7 +41,7 @@ void yellow () {
 }
 
 void reset () {
-    printf ("\033[0m");
+    printf ("\033[;0m");
 }
 void Undo_and_Redo(){
 
@@ -96,12 +96,12 @@ void checkBox (int n, char board[20][20],int k) {
                 if(k%2==0){
                     scoreplayer1++;
                     flag=1;
-                    board[i][j]=REDblock;
+                    board[i][j]=RED block RESET;
                 }
                 else{
                     scoreplayer2++;
                     flag=1;
-                    board[i][j]=BLUEblock;
+                    board[i][j]=BLUE block RESET;
                 }
             }
         }
@@ -136,10 +136,10 @@ void gamemode1(int y){
                    else{
                       if(player[r][c]==' '){
                             if(r%2==0){
-                                player[r][c]=Hline;
+                                player[r][c]=(RED Hline RESET);
                             }
                             else{
-                                player[r][c]=Vline;
+                                player[r][c]=(RED Vline RESET);
                             }
                             checkBox(n,player,i);
                       }
@@ -152,66 +152,68 @@ void gamemode1(int y){
         }
         else{
 
-             if((player[r-1][c]!=' ')&&(player[r+1][c]!=' ')&&(player[r][j-1]!=' ')&&(player[r][c+1]==' ')){
+             if((player[r-1][c]!=' ')&&(player[r+1][c]!=' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]==' ')){
                    if(r%2==0){
-                    player[r][c]=Hline;
+                    player[r][c]=(BLUE Hline RESET);
                     }
                    else{
-                    player[r][c]=Vline;
+                    player[r][c]=(BLUE Vline reset ());
                     }
                     checkBox(n,player,i);
 
              }
              else if((player[r-1][c]!=' ')&&(player[r+1][c]!=' ')&&(player[r][c-1]==' ')&&(player[r][c+1]!=' ')){
                 if(r%2==0){
-                    player[r][c-1]=Hline;
+                    player[r][c-1]=(BLUE Hline RESET);
                     }
                    else{
-                    player[r][c-1]=Vline;
+                    player[r][c-1]=BLUE Vline RESET;
                     }
                     checkBox(n,player,i);
              }
-             else if((player[r-1][j]!=' ')&&(player[r+1][j]==' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]!=' ')){
+             else if((player[r-1][c]!=' ')&&(player[r+1][c]==' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]!=' ')){
                 if((r+1)%2==0){
-                    player[r][c]=Hline;
+                    player[r][c]=(BLUE Hline RESET);
                     }
                    else{
-                    player[r][c]=Vline;
+                    player[r][c]=(BLUE Vline RESET);
                     }
                     checkBox(n,player,i);
              }
              else if ((player[r-1][c]==' ')&&(player[r+1][c]!=' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]!=' ')) {
                 if((r-1)%2==0){
-                    player[r-1][c]=Hline;
+                    player[r-1][c]=(BLUE Hline RESET);
                     }
                    else{
-                    player[r-1][c]=Vline;
+                    player[r-1][c]=(BLUE Vline RESET);
                     }
                    checkBox(n,player,i);
              }
 
-             else{
+        }
                 while(1){
                   srand(time(NULL));
                   r=rand()%11;
                   c=rand()%11;
-                  if(player[r][c]==' '){
+                  if((r+c)%2==0){
+                       goto place2;
+                   }
+                   else{
+                      if(player[r][c]==' '){
                             if(r%2==0){
-                                player[r][c]=Hline;
+                                player[r][c]=BLUE Hline;
                             }
                             else{
-                                player[r][c]=Vline;
+                                player[r][c]= Vline;
                             }
                             checkBox(n,player,i);
                       }
                       else{
+                        printf("invalid move\n");
+                        system("pause");
                         goto place2;
                       }
-
-                }
-
-             }
-
+                   }
         }
          if(flag==0){
                i++;
@@ -253,10 +255,10 @@ void gamemode2(int y){
                    else{
                       if(player[r][c]==' '){
                             if(r%2==0){
-                                player[r][c]=Hline;
+                                player[r][c]=(RED Hline RESET);
                             }
                             else{
-                                player[r][c]=Vline;
+                                player[r][c]=(RED Vline RESET);
                             }
                             checkBox(n,player,i);
                       }
@@ -270,12 +272,12 @@ void gamemode2(int y){
              }
              else{
                 printf(BLUE"\n\n player 2 turn\n\n"RESET);
-                printf (BLUE"remaining moves: %d \n\n", remMoves);
+                printf (BLUE"remaining moves: %d \n\n", remMoves RESET);
                 printf(BLUE"player2 score= "RESET);
                 printf("%d\n",scoreplayer2);
-                printf(BLUE"Enter number of row: ");
+                printf(BLUE"Enter number of row: " RESET);
                 scanf(" %d",&r);
-                printf(BLUE"\nEnter number of column: ");
+                printf(BLUE"\nEnter number of column: " RESET);
                 scanf ("%d",&c);
                    if((r+c)%2==0){
                       printf("invalid move\n");
@@ -285,10 +287,10 @@ void gamemode2(int y){
                    else{
                       if(player[r][c]==' '){
                             if(r%2==0){
-                               player[r][c]=Hline;
+                               player[r][c]=(BLUE Hline RESET);
                             }
                             else{
-                                player[r][c]=Vline;
+                                player[r][c]=(BLUE Vline RESET);
                             }
                             checkBox(n,player,i);
                       }
@@ -399,7 +401,7 @@ int main(void){
             gamemode2(begOrEx);
         }
         else {
-            //gamemode1(begOrEx);
+            gamemode1(begOrEx);
         }
         system("pause");
         jump5:
