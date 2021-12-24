@@ -22,17 +22,32 @@
 int n=1;
 char player[20][20];
 int scoreplayer1=0;
-int scoreplayer2=0
-int flag=0    
-    
+int scoreplayer2=0;
+int flag=0;
+
 //defining colors
 //player 1 will be red
 //player 2 will be blue
+void blue () {
+    printf ("\033[1;34m");
+}
+
+void red () {
+    printf ("\033[1;31m");
+}
+
+void yellow () {
+    printf ("\033[1;33m");
+}
+
+void reset () {
+    printf ("\033[0m");
+}
 void Undo_and_Redo(){
-    
-    
-    
-    
+
+
+
+
 }
 //creating the boards
 void createArray (int x) {
@@ -77,19 +92,136 @@ void checkBox (int n, char board[20][20],int k) {
     for (int i=1;i<=(n-2);i+=2) {
         for (int j=1;j<=(n-2);j+=2) {
             if ((board[i-1][j]!=' ')&&(board[i+1][j]!=' ')&&(board[i][j-1]!=' ')&&(board[i][j+1]!=' ')) {
-                board[i][j]=block;
+
                 if(k%2==0){
                     scoreplayer1++;
                     flag=1;
+                    board[i][j]=REDblock;
                 }
                 else{
                     scoreplayer2++;
                     flag=1;
+                    board[i][j]=BLUEblock;
                 }
             }
         }
     }
     printf("%d",n);
+}
+void gamemode1(int y){
+   createArray(y);
+  int i=0,r,c,remMoves;
+  if (y==1) remMoves=12;
+  else remMoves=60;
+    place2:
+    while(1){
+        system("cls");
+        flag=0;
+        printArray(y);
+        if(i%2==0){
+            printf(RED"\n\nPlayer's turn\n\n"RESET);
+                printf (RED"remaining moves:"RESET);
+                printf("%d\n",remMoves);
+                printf(RED"player1 score="RESET);
+                printf("%d\n",scoreplayer1);
+                printf(RED"Enter number of row: "RESET);
+                scanf(" %d",&r);
+                printf(RED"\nEnter number of column: "RESET);
+                scanf ("%d",&c);
+                   if((r+c)%2==0){
+                      printf("invalid move\n");
+                      system("pause");
+                      goto place2;
+                   }
+                   else{
+                      if(player[r][c]==' '){
+                            if(r%2==0){
+                                player[r][c]=Hline;
+                            }
+                            else{
+                                player[r][c]=Vline;
+                            }
+                            checkBox(n,player,i);
+                      }
+                      else{
+                        printf("invalid move\n");
+                        system("pause");
+                        goto place2;
+                      }
+                   }
+        }
+        else{
+
+             if((player[r-1][c]!=' ')&&(player[r+1][c]!=' ')&&(player[r][j-1]!=' ')&&(player[r][c+1]==' ')){
+                   if(r%2==0){
+                    player[r][c]=Hline;
+                    }
+                   else{
+                    player[r][c]=Vline;
+                    }
+                    checkBox(n,player,i);
+
+             }
+             else if((player[r-1][c]!=' ')&&(player[r+1][c]!=' ')&&(player[r][c-1]==' ')&&(player[r][c+1]!=' ')){
+                if(r%2==0){
+                    player[r][c-1]=Hline;
+                    }
+                   else{
+                    player[r][c-1]=Vline;
+                    }
+                    checkBox(n,player,i);
+             }
+             else if((player[r-1][j]!=' ')&&(player[r+1][j]==' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]!=' ')){
+                if((r+1)%2==0){
+                    player[r][c]=Hline;
+                    }
+                   else{
+                    player[r][c]=Vline;
+                    }
+                    checkBox(n,player,i);
+             }
+             else if ((player[r-1][c]==' ')&&(player[r+1][c]!=' ')&&(player[r][c-1]!=' ')&&(player[r][c+1]!=' ')) {
+                if((r-1)%2==0){
+                    player[r-1][c]=Hline;
+                    }
+                   else{
+                    player[r-1][c]=Vline;
+                    }
+                   checkBox(n,player,i);
+             }
+
+             else{
+                while(1){
+                  srand(time(NULL));
+                  r=rand()%11;
+                  c=rand()%11;
+                  if(player[r][c]==' '){
+                            if(r%2==0){
+                                player[r][c]=Hline;
+                            }
+                            else{
+                                player[r][c]=Vline;
+                            }
+                            checkBox(n,player,i);
+                      }
+                      else{
+                        goto place2;
+                      }
+
+                }
+
+             }
+
+        }
+         if(flag==0){
+               i++;
+         }
+           remMoves--;
+        if(remMoves==0){
+        break;
+        }
+
+    }
 }
 
 //gamemode2 algorithm (vs human)
@@ -106,9 +238,9 @@ void gamemode2(int y){
              if(i%2==0){
                 printf(RED"\n\nPlayer 1 turn\n\n"RESET);
                 printf (RED"remaining moves:"RESET);
-                printf("%d",remMoves); 
+                printf("%d\n",remMoves);
                 printf(RED"player1 score="RESET);
-                printf("%d",scoreplayer1) 
+                printf("%d\n",scoreplayer1);
                 printf(RED"Enter number of row: "RESET);
                 scanf(" %d",&r);
                 printf(RED"\nEnter number of column: "RESET);
@@ -126,7 +258,7 @@ void gamemode2(int y){
                             else{
                                 player[r][c]=Vline;
                             }
-                            checkBox(n,player);
+                            checkBox(n,player,i);
                       }
                       else{
                         printf("invalid move\n");
@@ -139,7 +271,8 @@ void gamemode2(int y){
              else{
                 printf(BLUE"\n\n player 2 turn\n\n"RESET);
                 printf (BLUE"remaining moves: %d \n\n", remMoves);
-                printf(BLUE"player2 score= %d",scoreplayer2); 
+                printf(BLUE"player2 score= "RESET);
+                printf("%d\n",scoreplayer2);
                 printf(BLUE"Enter number of row: ");
                 scanf(" %d",&r);
                 printf(BLUE"\nEnter number of column: ");
@@ -157,7 +290,7 @@ void gamemode2(int y){
                             else{
                                 player[r][c]=Vline;
                             }
-                            checkBox(n,player);
+                            checkBox(n,player,i);
                       }
                       else{
                         printf("invalid move\n");
@@ -168,14 +301,15 @@ void gamemode2(int y){
                    }
 
              }
-           if!(flag){
+           if(flag==0){
                i++;
            }
            remMoves--;
-       }
-    if(remMoves==0){
+           if(remMoves==0){
         break;
-    }
+         }
+       }
+
 }
 
 //main
