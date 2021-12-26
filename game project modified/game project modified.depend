@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1640549041 source:c:\users\20100\documents\c projects\game project modified\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"GameGrid.h"
+	"checkbox.h"
+	"PlayerInfo.h"
+
+1640544536 c:\users\20100\documents\c projects\game project modified\playerinfo.h
+
+1640559787 c:\users\20100\documents\c projects\game project modified\gamegrid.h
+
+1640560236 c:\users\20100\documents\c projects\game project modified\vsplayer.h
+
+1640561950 c:\users\20100\documents\c projects\game project modified\vscomputer.h
+
+1640548446 c:\users\20100\documents\c projects\game project modified\checkbox.h
+
