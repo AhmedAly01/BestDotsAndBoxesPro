@@ -30,7 +30,7 @@ mainMenu:
    printf("\t\t 2.LOAD GAME \n\n\n");
    printf("\t\t 3.LEADERBOARD\n\n\n");
    printf("\t\t 4.EXIT\n\n\n\n\n");
-   printf("\t\t.ENTER THE NUMBER(1 OR 2 OR 3 OR 4):");
+   printf("\t\tENTER THE NUMBER(1 OR 2 OR 3 OR 4):");
    scanf("%d",&x1);
    if(x1==1){
     goto j1;
@@ -102,6 +102,7 @@ int playergame[20][20];
 goto mainMenu;
 
 j2:
+
 
 j3:
 while(1) {

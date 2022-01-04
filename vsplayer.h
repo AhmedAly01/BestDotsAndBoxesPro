@@ -21,16 +21,16 @@ void gamemode2(int y,int n,int player[20][20],char playername1[],char playername
   player2.playerscore= 0;
   system("cls");
   printf("ENTER PLAYER 1 NAME : ");
-  scanf("%s",playername1);
+  scanf (" %[^\n]%*c", playername1);
   printf("\n\n\nENTER PLAYER 2 NAME : ");
-  scanf("%s",playername2);
+  scanf (" %[^\n]%*c", playername2);
   int r,c;
   i=0;
   time_t start,end1;
-  if (y==1) remMoves=12;
-  else remMoves=60;
   start=time(NULL);
   end1=start;
+  if (y==1) remMoves=12;
+  else remMoves=60;
   place1:
   printArray(n,player);
   startOfGame:
@@ -98,7 +98,7 @@ void gamemode2(int y,int n,int player[20][20],char playername1[],char playername
                 printf (BBLU"remaining moves: %d "reset, remMoves);
                 printf("\nplayer score = %d",player2.playerscore);
                 printf ("\t\t\t time passed= %.2lf\n\n\n",difftime(end1,start));
-                printf ("\nEnter(3,3) to save\n");
+                printf ("\nEnter (1,1) for undo\t(2,2) for redo\t(3,3) for save\n\n");
                 printf(BBLU"Enter number of row: "reset);
                 scanf(" %d",&r);
                 printf(BBLU"Enter number of column: "reset);
@@ -171,13 +171,14 @@ void gamemode2(int y,int n,int player[20][20],char playername1[],char playername
 
            remMoves--;
            if(remMoves==0){
-                system ("cls");
+                system("cls");
+                printArray(n,player);
                 if (player1.playerscore>player2.playerscore) {
-                    printf ("\n\nPlayer 1 wins!!\n");
+                    printf (BRED"\n\nPlayer 1 wins!!\n"reset);
                     rankHandle(playername1,player1.playerscore);
                 }
                 else {
-                    printf ("\n\nPlayer 2 wins!!\n");
+                    printf (BBLU"\n\nPlayer 2 wins!!\n"reset);
                     rankHandle(playername2,player2.playerscore);
                 }
                 printf ("\n\nPress any key to go to main menu\n");
