@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1641003547 source:c:\users\20100\documents\c projects\game project modified\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+
+1640544536 c:\users\20100\documents\c projects\game project modified\playerinfo.h
+
+1640967847 c:\users\20100\documents\c projects\game project modified\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641003568 c:\users\20100\documents\c projects\game project modified\vsplayer.h
+
+1641003449 c:\users\20100\documents\c projects\game project modified\vscomputer.h
+
+1640716237 c:\users\20100\documents\c projects\game project modified\checkbox.h
+
+1640820081 c:\users\20100\documents\c projects\game project modified\bot.h
+
+1641003456 c:\users\20100\documents\c projects\game project modified\undoandredo.h
+
+1641134667 source:c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641138795 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\vsplayer.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\vscomputer.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\undoandredo.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641133093 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\rank.h
+
+1641138198 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\saveandload.h
+
+1641140360 source:c:\users\20100\documents\c projects\bestdotsandboxespro-main\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641446272 c:\users\20100\documents\c projects\bestdotsandboxespro-main\vsplayer.h
+
+1641446350 c:\users\20100\documents\c projects\bestdotsandboxespro-main\vscomputer.h
+
+1641446272 c:\users\20100\documents\c projects\bestdotsandboxespro-main\undoandredo.h
+
+1641140360 c:\users\20100\documents\c projects\bestdotsandboxespro-main\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641140360 c:\users\20100\documents\c projects\bestdotsandboxespro-main\rank.h
+
+1641140360 c:\users\20100\documents\c projects\bestdotsandboxespro-main\saveandload.h
+
