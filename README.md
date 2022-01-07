@@ -1,2 +1,0 @@
-# BestDotsAndBoxesPro
-#Best project ever
