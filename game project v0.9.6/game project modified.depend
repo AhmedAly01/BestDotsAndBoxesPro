@@ -1,0 +1,187 @@
+# depslib dependency file v1.0
+1641003547 source:c:\users\20100\documents\c projects\game project modified\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+
+1640544536 c:\users\20100\documents\c projects\game project modified\playerinfo.h
+
+1640967847 c:\users\20100\documents\c projects\game project modified\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641003568 c:\users\20100\documents\c projects\game project modified\vsplayer.h
+
+1641003449 c:\users\20100\documents\c projects\game project modified\vscomputer.h
+
+1640716237 c:\users\20100\documents\c projects\game project modified\checkbox.h
+
+1640820081 c:\users\20100\documents\c projects\game project modified\bot.h
+
+1641003456 c:\users\20100\documents\c projects\game project modified\undoandredo.h
+
+1641134667 source:c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641138795 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\vsplayer.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\vscomputer.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\undoandredo.h
+
+1641032560 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641133093 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\rank.h
+
+1641138198 c:\users\ahmed\dropbox\my pc (laptop-f43k4pb7)\desktop\game project modified\saveandload.h
+
+1641304084 source:d:\game project v0.9\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641302798 d:\game project v0.9\vsplayer.h
+
+1641305049 d:\game project v0.9\vscomputer.h
+
+1641032560 d:\game project v0.9\undoandredo.h
+
+1641300392 d:\game project v0.9\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641139249 d:\game project v0.9\rank.h
+
+1641138198 d:\game project v0.9\saveandload.h
+
+1641304084 source:d:\game project v0.9.1\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641577345 d:\game project v0.9.1\vsplayer.h
+
+1641577345 d:\game project v0.9.1\vscomputer.h
+
+1641032560 d:\game project v0.9.1\undoandredo.h
+
+1641300392 d:\game project v0.9.1\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641139249 d:\game project v0.9.1\rank.h
+
+1641138198 d:\game project v0.9.1\saveandload.h
+
+1641647295 source:d:\game project v0.9.2\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641643434 d:\game project v0.9.2\vsplayer.h
+
+1641647691 d:\game project v0.9.2\vscomputer.h
+
+1641642006 d:\game project v0.9.2\undoandredo.h
+
+1641642006 d:\game project v0.9.2\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641642006 d:\game project v0.9.2\rank.h
+
+1641644996 d:\game project v0.9.2\saveandload.h
+
+1641672750 source:d:\game project v0.9.5\main.c
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	"vsplayer.h"
+	"vscomputer.h"
+	"UndoAndRedo.h"
+	"GameGrid.h"
+	"rank.h"
+	"SaveAndLoad.h"
+
+1641676281 d:\game project v0.9.5\vsplayer.h
+
+1641673872 d:\game project v0.9.5\vscomputer.h
+
+1641676883 d:\game project v0.9.5\undoandredo.h
+
+1641670781 d:\game project v0.9.5\gamegrid.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1641670598 d:\game project v0.9.5\rank.h
+
+1641670674 d:\game project v0.9.5\saveandload.h
+
